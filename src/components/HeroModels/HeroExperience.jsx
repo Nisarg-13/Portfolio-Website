@@ -18,7 +18,7 @@ const HeroExperience = () => {
             {/* Configure OrbitControls to disable panning and control zoom based on device type */}
             <OrbitControls
                 enablePan={false} // Prevents panning of the scene
-                enableZoom={!isTablet} // Disables zoom on tablets
+                enableZoom={false} // Disables zoom on tablets
                 maxDistance={20} // Maximum distance for zooming out
                 minDistance={5} // Minimum distance for zooming in
                 minPolarAngle={Math.PI / 5} // Minimum angle for vertical rotation
@@ -27,7 +27,7 @@ const HeroExperience = () => {
 
             <Suspense fallback={null}>
                 <HeroLights/>
-                <Particles count={100}/>
+                {/* <Particles count={100}/> */}
                 <group
                     scale={isMobile ? 0.7 : 1}
                     position={[0, -3.5, 0]}
