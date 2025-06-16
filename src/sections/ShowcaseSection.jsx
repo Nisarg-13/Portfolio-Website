@@ -99,7 +99,7 @@ const ShowcaseSection = () => {
                             <div className="image-wrapper group relative overflow-hidden bg-[#ffe7eb]">
                                 <img
                                     src="/images/Project_2.png"
-                                    alt="Task-Flow"
+                                    alt="Task-Flow "
                                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                 />
                                 <a
