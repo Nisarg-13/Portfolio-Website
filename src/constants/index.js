@@ -119,6 +119,21 @@ const techStackIcons = [
 
 const expCards = [
     {
+        review: "At EVER, I work as a Software Developer, developing scalable full-stack features and cross-platform mobile applications. I focus on building robust backend services, optimizing database performance, and creating intuitive user interfaces while collaborating in an Agile environment.",
+        imgPath: "",
+        logoPath: "/images/EVER.jpg",
+        title: "Software Developer",
+        date: "September 2025 - Present",
+        responsibilities: [
+            "Developed scalable full-stack features using Next.js, Node.js, React, and TypeScript, following clean architecture and best coding practices.",
+            "Implemented and optimized backend services and RESTful APIs, improving system reliability, performance, and scalability.",
+            "Designed and maintained PostgreSQL databases and used Prisma ORM for efficient data modeling, query optimization, and improved system responsiveness.",
+            "Built reusable front-end components and enhanced UI workflows to ensure smooth and intuitive user experiences.",
+            "Collaborated with cross-functional teams in an Agile environment, contributing to sprint planning, code reviews, and CI/CD processes.",
+            "Developed a cross-platform mobile application using React Native for iOS and Android, expanding platform accessibility to mobile users.",
+        ],
+    },
+    {
         review: "TalentHub is an internal recruitment system that automated and streamlined hiring workflows. I played a key role in both backend and frontend development, ensuring scalability and efficiency throughout the platform.",
         imgPath: "",
         logoPath: "/images/Casepoint.jpg",
@@ -208,7 +223,7 @@ const testimonials = [
 const socialImgs = [
     {
         name: "linkedin",
-        url: "https://www.linkedin.com/in/nisargpatel1309/",
+        url: "https://www.linkedin.com/in/nisargkumarpatel/",
         imgPath: "/images/linkedin.png",
     },
     {
