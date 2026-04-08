@@ -5,10 +5,23 @@ const NavBar = () => {
 
     const [scrolled, setScrolled] = useState(false);
 
+    const scrollToSection = (sectionId) => {
+        const targetSection = document.getElementById(sectionId);
+
+        if (targetSection) {
+            targetSection.scrollIntoView({behavior: "smooth"});
+        }
+    };
+
+    const handleSectionNavigation = (event, sectionId) => {
+        event.preventDefault();
+        scrollToSection(sectionId);
+    };
+
     useEffect(() => {
         const handleScroll = () => {
             const isScrolled = window.scrollY > 10;
-            setScrolled(true);
+            setScrolled(isScrolled);
         }
 
         window.addEventListener('scroll', handleScroll);
@@ -18,15 +31,15 @@ const NavBar = () => {
     return (
         <header className={`navbar ${scrolled ? 'scrolled' : 'not-scrolled'}`}>
             <div className="inner">
-                <a className="logo" href="#hero">
+                <a className="logo" href="#hero" onClick={(event) => handleSectionNavigation(event, "hero")}>
                     Nisarg Patel
                 </a>
 
                 <nav className="desktop">
                     <ul>
-                        {navLinks.map(({link, name}) => (
+                        {navLinks.map(({sectionId, name}) => (
                             <li key={name} className="group">
-                                <a href={link}>
+                                <a href={`#${sectionId}`} onClick={(event) => handleSectionNavigation(event, sectionId)}>
                                     <span> {name} </span>
                                     <span className="underline"/>
                                 </a>
@@ -35,7 +48,7 @@ const NavBar = () => {
                     </ul>
                 </nav>
 
-                <a href="#contact" className="contact-btn group">
+                <a href="#contact" className="contact-btn group" onClick={(event) => handleSectionNavigation(event, "contact")}>
                     <div className="inner">
                         <span>Contact Me</span>
                     </div>
