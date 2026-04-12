@@ -1,10 +1,63 @@
-import { useRef } from 'react'
+import { forwardRef, useRef, useState } from 'react'
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { FaGithub } from 'react-icons/fa';
 
 gsap.registerPlugin(ScrollTrigger);
+
+const TiltCard = forwardRef(({ children, className = "" }, ref) => {
+    const [transform, setTransform] = useState("perspective(800px) rotateX(0deg) rotateY(0deg)");
+    const [glare, setGlare] = useState({ x: 50, y: 50, opacity: 0 });
+
+    const handleMouseMove = (event) => {
+        const rect = event.currentTarget.getBoundingClientRect();
+        const relativeX = (event.clientX - rect.left) / rect.width;
+        const relativeY = (event.clientY - rect.top) / rect.height;
+
+        const maxTilt = 12;
+        const tiltX = (relativeX - 0.5) * maxTilt * 2;
+        const tiltY = (0.5 - relativeY) * maxTilt * 2;
+
+        setTransform(`perspective(800px) rotateX(${tiltY}deg) rotateY(${tiltX}deg)`);
+        setGlare({ x: relativeX * 100, y: relativeY * 100, opacity: 0.35 });
+    };
+
+    const handleMouseLeave = () => {
+        setTransform("perspective(800px) rotateX(0deg) rotateY(0deg)");
+        setGlare({ x: 50, y: 50, opacity: 0 });
+    };
+
+    return (
+        <div
+            ref={ref}
+            className={className}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            style={{
+                transform,
+                transformStyle: "preserve-3d",
+                transition: "transform 0.4s ease",
+                position: "relative",
+            }}
+        >
+            <div
+                aria-hidden="true"
+                style={{
+                    position: "absolute",
+                    inset: 0,
+                    borderRadius: 14,
+                    background: `radial-gradient(circle at ${glare.x}% ${glare.y}%, rgba(255,255,255,${glare.opacity}), rgba(255,255,255,0) 46%)`,
+                    pointerEvents: "none",
+                    zIndex: 2,
+                }}
+            />
+            {children}
+        </div>
+    );
+});
+
+TiltCard.displayName = "TiltCard";
 
 const ShowcaseSection = () => {
 
@@ -30,12 +83,12 @@ const ShowcaseSection = () => {
     }, []);
 
     return (
-        <section id="work" ref={sectionRef} className="app-showcase">
+        <section id="showcase" ref={sectionRef} className="app-showcase">
             <div className="w-full">
                 <div className="showcaselayout">
                     {/* LEFT SIDE */}
 
-                    <div className="first-project-wrapper" ref={project1Ref}>
+                    <TiltCard className="first-project-wrapper" ref={project1Ref}>
                         {/*<div className="image-wrapper">*/}
                         {/*    <img src="/images/Project_1.jpg" alt="TalentHub"/>*/}
                         {/*</div>*/}
@@ -69,13 +122,13 @@ const ShowcaseSection = () => {
                             <h2 className='text-center'> Splitzy </h2>
                             <p className="text-center text-white-50 md:text-xl">Welcome to Splitzy – Effortlessly track, split, and settle personal and group expenses, all in one place.</p>
                         </div>
-                    </div>
+                    </TiltCard>
 
                     {/* RIGHT SIDE */}
 
                     <div className="project-list-wrapper overflow-hidden">
                         { /* Project_2 */}
-                        <div className="project" ref={project2Ref}>
+                        <TiltCard className="project" ref={project2Ref}>
                             <div className="image-wrapper group relative overflow-hidden bg-[#ffefdb]">
                                 <img
                                     src="/images/Project_1.jpg"
@@ -92,10 +145,10 @@ const ShowcaseSection = () => {
                                 </a>
                             </div>
                             <h2 className='text-center'> TalentHub </h2>
-                        </div>
+                        </TiltCard>
 
                         { /* Project_3 */}
-                        <div className="project" ref={project3Ref}>
+                        <TiltCard className="project" ref={project3Ref}>
                             <div className="image-wrapper group relative overflow-hidden bg-[#ffe7eb]">
                                 <img
                                     src="/images/Project_2.png"
@@ -112,7 +165,7 @@ const ShowcaseSection = () => {
                                 </a>
                             </div>
                             <h2 className='text-center'> Task-Flow Web-Application </h2>
-                        </div>
+                        </TiltCard>
 
 
 

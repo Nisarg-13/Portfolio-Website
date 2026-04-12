@@ -1,7 +1,15 @@
 const navLinks = [
     {
-        name: "Work",
-        sectionId: "work",
+        name: "Projects",
+        sectionId: "showcase",
+    },
+    {
+        name: "Skills",
+        sectionId: "skills",
+    },
+    {
+        name: "About",
+        sectionId: "about",
     },
     {
         name: "Experience",
@@ -200,7 +208,6 @@ export {
     counterItems,
     expCards,
     expLogos,
-    testimonials,
     socialImgs,
     techStackIcons,
     techStackImgs,

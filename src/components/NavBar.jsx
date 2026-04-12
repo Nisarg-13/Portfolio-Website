@@ -7,9 +7,17 @@ const NavBar = () => {
 
     const scrollToSection = (sectionId) => {
         const targetSection = document.getElementById(sectionId);
+        const navElement = document.querySelector(".navbar");
+        const navHeight = navElement ? navElement.getBoundingClientRect().height : 0;
 
         if (targetSection) {
-            targetSection.scrollIntoView({behavior: "smooth"});
+            const sectionTop = targetSection.getBoundingClientRect().top + window.scrollY;
+            const topOffset = 20;
+
+            window.scrollTo({
+                top: Math.max(sectionTop - navHeight - topOffset, 0),
+                behavior: "smooth",
+            });
         }
     };
 
