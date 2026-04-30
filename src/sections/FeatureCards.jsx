@@ -2,7 +2,7 @@ import {abilities} from "../constants/index.js";
 
 const FeatureCards = () => {
     return (
-        <section id="about" className="w-full padding-x-lg">
+        <section id="about" className="w-full padding-x-lg mt-20 md:mt-24">
             <div className="mx-auto grid-3-cols">
                 {abilities.map(({imgPath, title, desc}) => (
                     <div key={title} className="card-border rounded-xl p-8 flex flex-col gap-4">
