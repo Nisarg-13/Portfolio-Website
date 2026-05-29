@@ -133,12 +133,13 @@ const expCards = [
         title: "Software Developer",
         date: "September 2025 - Present",
         responsibilities: [
-            "Developed scalable full-stack features using Next.js, Node.js, React, and TypeScript, following clean architecture and best coding practices.",
-            "Implemented and optimized backend services and RESTful APIs, improving system reliability, performance, and scalability.",
-            "Designed and maintained PostgreSQL databases and used Prisma ORM for efficient data modeling, query optimization, and improved system responsiveness.",
-            "Built reusable front-end components and enhanced UI workflows to ensure smooth and intuitive user experiences.",
+            "Built scalable full-stack features using Next.js, Node.js, React, and TypeScript, following clean architecture and best coding practices.",
+            "Implemented and optimized backend services and RESTful APIs, reducing response times and improving system reliability and scalability.",
+            "Working on AI-based product features using Python, spanning backend services, data pipelines, and intelligent automation.",
+            "Designed and maintained PostgreSQL databases using Prisma ORM for efficient data modeling and query optimization.",
+            "Managed production deployments via GitHub Actions CI/CD pipelines and handled database migrations securely using AWS SSH tunneling.",
+            "Delivered a cross-platform mobile application using React Native for iOS and Android, expanding platform accessibility to mobile users.",
             "Collaborated with cross-functional teams in an Agile environment, contributing to sprint planning, code reviews, and CI/CD processes.",
-            "Developed a cross-platform mobile application using React Native for iOS and Android, expanding platform accessibility to mobile users.",
         ],
     },
     {
