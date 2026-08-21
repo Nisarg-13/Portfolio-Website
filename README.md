@@ -1,12 +1,84 @@
-# React + Vite
+# Nisarg Patel — Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio site for **Nisarg Patel**, a Full Stack Developer. Built with React and Vite, featuring interactive 3D visuals, scroll-driven animations, and a responsive layout.
 
-Currently, two official plugins are available:
+## Sections
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+| Section | Description |
+| --- | --- |
+| **Hero** | Intro with animated 3D room and headline |
+| **Isometric Room** | Interactive 3D scene — click objects to navigate or download the CV |
+| **Projects** | Showcase of selected work with tilt cards and live links |
+| **Skills** | Tech stack with animated 3D icons |
+| **About** | Strengths and capabilities |
+| **Experience** | Professional timeline with centered layout |
+| **Contact** | Email form powered by EmailJS |
+| **Footer** | Social links |
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Framework:** React 19 + Vite 6
+- **Styling:** Tailwind CSS 4
+- **Animation:** GSAP, ScrollTrigger
+- **3D:** Three.js, React Three Fiber, Drei
+- **Other:** EmailJS, React Icons, React CountUp
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm
+
+### Install & run
+
+```bash
+git clone https://github.com/Nisarg-13/Portfolio-Website.git
+cd Portfolio-Website
+npm install
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+### Build for production
+
+```bash
+npm run build
+npm run preview
+```
+
+### Lint
+
+```bash
+npm run lint
+```
+
+## Project Structure
+
+```text
+src/
+├── components/     # Reusable UI (NavBar, Loader, GlowCard, 3D models, etc.)
+├── sections/       # Page sections (Hero, Projects, Experience, Contact, …)
+├── constants/      # Nav links, experience, skills, social URLs
+├── App.jsx         # Root layout and section composition
+└── index.css       # Global styles and Tailwind theme
+
+public/
+├── Nisarg_Patel_CV.pdf   # Downloadable CV
+└── images/               # Screenshots, logos, and icons
+```
+
+## CV / Resume
+
+The CV is served from `public/Nisarg_Patel_CV.pdf`. It downloads when users click the **Resume** drawer in the Isometric Room scene.
+
+To update the CV, replace that file or update the path in `src/sections/IsometricRoom.jsx`.
+
+## Author
+
+**Nisarg Patel** — Full Stack Developer
+
+- [LinkedIn](https://www.linkedin.com/in/nisargkumarpatel/)
+- [GitHub](https://github.com/Nisarg-13)
+- [Email](mailto:patelnisarg1309@gmail.com)
