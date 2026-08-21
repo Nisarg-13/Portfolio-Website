@@ -64,10 +64,9 @@ const ShowcaseSection = () => {
     const sectionRef = useRef(null);
     const project1Ref = useRef(null);
     const project2Ref = useRef(null);
-    const project3Ref = useRef(null);
 
     useGSAP(() => {
-        const projects = [project1Ref.current, project2Ref.current, project3Ref.current];
+        const projects = [project1Ref.current, project2Ref.current];
         projects.forEach((card, index) => {
             gsap.fromTo(card,
                 { y: 50, opacity: 0 },
@@ -89,9 +88,6 @@ const ShowcaseSection = () => {
                     {/* LEFT SIDE */}
 
                     <TiltCard className="first-project-wrapper" ref={project1Ref}>
-                        {/*<div className="image-wrapper">*/}
-                        {/*    <img src="/images/Project_1.jpg" alt="TalentHub"/>*/}
-                        {/*</div>*/}
                         <div className="image-wrapper group relative overflow-hidden">
                             <img
                                 src="/images/hero.png"
@@ -127,36 +123,15 @@ const ShowcaseSection = () => {
                     {/* RIGHT SIDE */}
 
                     <div className="project-list-wrapper overflow-hidden">
-                        { /* Project_2 */}
                         <TiltCard className="project" ref={project2Ref}>
-                            <div className="image-wrapper group relative overflow-hidden bg-[#ffefdb]">
+                            <div className="image-wrapper group relative overflow-hidden bg-[#070B11]">
                                 <img
-                                    src="/images/Project_1.jpg"
-                                    alt="TalentHub"
+                                    src="/images/tradelab.png"
+                                    alt="Nisarg's TradeLab"
                                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                 />
                                 <a
-                                    href="https://github.com/Nisarg-13/TalentHub"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                                >
-                                    <FaGithub className="text-black text-4xl" />
-                                </a>
-                            </div>
-                            <h2 className='text-center'> TalentHub </h2>
-                        </TiltCard>
-
-                        { /* Project_3 */}
-                        <TiltCard className="project" ref={project3Ref}>
-                            <div className="image-wrapper group relative overflow-hidden bg-[#ffe7eb]">
-                                <img
-                                    src="/images/Project_2.png"
-                                    alt="Task-Flow "
-                                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                                />
-                                <a
-                                    href="https://github.com/Nisarg-13/TaskFlow"
+                                    href="https://github.com/Nisarg-13/Nisarg-TradeLab-Frontend"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -164,11 +139,8 @@ const ShowcaseSection = () => {
                                     <FaGithub className="text-white text-4xl" />
                                 </a>
                             </div>
-                            <h2 className='text-center'> Task-Flow Web-Application </h2>
+                            <h2 className='text-center'> Nisarg&apos;s TradeLab </h2>
                         </TiltCard>
-
-
-
                     </div>
                 </div>
             </div>
