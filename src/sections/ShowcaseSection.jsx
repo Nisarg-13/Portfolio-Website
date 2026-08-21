@@ -52,12 +52,34 @@ const TiltCard = forwardRef(({ children, className = "" }, ref) => {
                     zIndex: 2,
                 }}
             />
-            {children}
+            <div className="relative z-[1]">{children}</div>
         </div>
     );
 });
 
 TiltCard.displayName = "TiltCard";
+
+const ProjectLinks = ({ githubUrl, liveUrl, liveLabel }) => (
+    <div className="flex items-center justify-center gap-4 mt-3">
+        <a
+            href={githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-white-50 hover:text-white transition-colors"
+        >
+            <FaGithub className="text-xl" />
+            <span className="underline">GitHub</span>
+        </a>
+        <a
+            href={liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white-50 hover:text-blue-300 transition-colors underline"
+        >
+            {liveLabel}
+        </a>
+    </div>
+);
 
 const ShowcaseSection = () => {
 
@@ -85,62 +107,83 @@ const ShowcaseSection = () => {
         <section id="showcase" ref={sectionRef} className="app-showcase">
             <div className="w-full">
                 <div className="showcaselayout">
-                    {/* LEFT SIDE */}
+                    <div className="project-card" ref={project1Ref}>
+                        <TiltCard className="w-full">
+                            <div className="image-wrapper group relative overflow-hidden">
+                                <img
+                                    src="/images/hero.png"
+                                    alt="Splitzy"
+                                    className="transition-transform duration-300 group-hover:scale-105"
+                                />
 
-                    <TiltCard className="first-project-wrapper" ref={project1Ref}>
-                        <div className="image-wrapper group relative overflow-hidden">
-                            <img
-                                src="/images/hero.png"
-                                alt="Splitzy"
-                                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                            />
-
-                            <div className="absolute inset-0 bg-black/30 flex items-center justify-center gap-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <a
-                                    href="https://github.com/Nisarg-13/Splitzy"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-white text-4xl hover:scale-110 transition-transform"
-                                >
-                                    <FaGithub />
-                                </a>
-                                <a
-                                    href="https://splitzy-snowy.vercel.app/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-white text-lg underline hover:text-blue-300 transition-colors"
-                                >
-                                    Open Splitzy
-                                </a>
+                                <div className="absolute inset-0 z-10 bg-black/30 flex items-center justify-center gap-6 opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity duration-300">
+                                    <a
+                                        href="https://github.com/Nisarg-13/Splitzy"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-white text-4xl hover:scale-110 transition-transform relative z-20"
+                                    >
+                                        <FaGithub />
+                                    </a>
+                                    <a
+                                        href="https://splitzy-snowy.vercel.app/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-white text-lg underline hover:text-blue-300 transition-colors relative z-20"
+                                    >
+                                        Open Splitzy
+                                    </a>
+                                </div>
                             </div>
-                        </div>
+                        </TiltCard>
                         <div className="text-content">
                             <h2 className='text-center'> Splitzy </h2>
                             <p className="text-center text-white-50 md:text-xl">Welcome to Splitzy – Effortlessly track, split, and settle personal and group expenses, all in one place.</p>
+                            <ProjectLinks
+                                githubUrl="https://github.com/Nisarg-13/Splitzy"
+                                liveUrl="https://splitzy-snowy.vercel.app/"
+                                liveLabel="Open Splitzy"
+                            />
                         </div>
-                    </TiltCard>
+                    </div>
 
-                    {/* RIGHT SIDE */}
-
-                    <div className="project-list-wrapper overflow-hidden">
-                        <TiltCard className="project" ref={project2Ref}>
+                    <div className="project-card" ref={project2Ref}>
+                        <TiltCard className="w-full">
                             <div className="image-wrapper group relative overflow-hidden bg-[#070B11]">
                                 <img
                                     src="/images/tradelab.png"
                                     alt="Nisarg's TradeLab"
-                                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    className="transition-transform duration-300 group-hover:scale-105"
                                 />
-                                <a
-                                    href="https://github.com/Nisarg-13/Nisarg-TradeLab-Frontend"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                                >
-                                    <FaGithub className="text-white text-4xl" />
-                                </a>
+                                <div className="absolute inset-0 z-10 bg-black/30 flex items-center justify-center gap-6 opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity duration-300">
+                                    <a
+                                        href="https://github.com/Nisarg-13/Nisarg-TradeLab-Frontend"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-white text-4xl hover:scale-110 transition-transform relative z-20"
+                                    >
+                                        <FaGithub />
+                                    </a>
+                                    <a
+                                        href="https://nisarg-trade-lab-frontend.vercel.app/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-white text-lg underline hover:text-blue-300 transition-colors relative z-20"
+                                    >
+                                        Open TradeLab
+                                    </a>
+                                </div>
                             </div>
-                            <h2 className='text-center'> Nisarg&apos;s TradeLab </h2>
                         </TiltCard>
+                        <div className="text-content">
+                            <h2 className='text-center'> Nisarg&apos;s TradeLab </h2>
+                            <p className="text-center text-white-50 md:text-xl">Track, analyze, and improve your trading with a personal journal, analytics dashboard, and AI-assisted insights.</p>
+                            <ProjectLinks
+                                githubUrl="https://github.com/Nisarg-13/Nisarg-TradeLab-Frontend"
+                                liveUrl="https://nisarg-trade-lab-frontend.vercel.app/"
+                                liveLabel="Open TradeLab"
+                            />
+                        </div>
                     </div>
                 </div>
             </div>

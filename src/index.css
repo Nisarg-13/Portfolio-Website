@@ -161,46 +161,26 @@ section {
         @apply w-full mt-20 px-5 md:px-20 py-10 md:py-20 flex items-center justify-center;
 
         .showcaselayout {
-            @apply flex xl:flex-row flex-col gap-10 justify-between;
+            @apply grid grid-cols-1 xl:grid-cols-2 gap-10 w-full;
         }
 
-        .first-project-wrapper {
-            @apply h-full flex flex-col justify-between xl:w-[60%];
+        .project-card {
+            @apply h-full flex flex-col;
 
             .image-wrapper {
-                @apply xl:h-[70vh] md:h-[50vh] h-96 relative;
+                @apply aspect-[16/10] w-full relative overflow-hidden rounded-xl bg-black-200;
 
                 img {
-                    @apply w-full h-full object-cover rounded-xl absolute inset-0;
+                    @apply w-full h-full object-contain rounded-xl;
                 }
             }
 
             .text-content {
                 @apply space-y-5 mt-5;
 
-                .badges {
-                    @apply flex gap-2 mb-4;
-                }
-
                 h2 {
                     @apply text-2xl md:text-3xl lg:text-4xl font-bold;
                 }
-            }
-        }
-
-        .project-list-wrapper {
-            @apply flex md:flex-row flex-col xl:flex-col gap-10 xl:w-[40%];
-
-            .image-wrapper {
-                @apply xl:h-[37vh] md:h-52 lg:h-72 h-64 relative rounded-xl xl:px-5 2xl:px-12 py-0;
-            }
-
-            img {
-                @apply w-full h-full object-contain rounded-xl;
-            }
-
-            h2 {
-                @apply text-lg md:text-xl lg:text-2xl font-semibold mt-5;
             }
         }
     }
@@ -241,34 +221,42 @@ section {
         @apply md:w-40 w-32;
     }
 
-    .timeline-wrapper {
-        @apply absolute top-0 xl:left-[35.5vw] md:left-10 left-5 h-full flex justify-center;
+    .timeline-track {
+        @apply w-10 sm:w-12 md:w-14;
+    }
+
+    .timeline-track .gradient-line {
+        @apply w-0.5;
     }
 
     .timeline {
-        @apply absolute z-30 h-[110%] -top-10 w-14 md:w-28 bg-black;
+        @apply z-30 w-full bg-black;
+        height: 110%;
+        top: -2.5rem;
     }
 
     .timeline-logo {
-        @apply md:size-20 size-10 flex-none rounded-full flex justify-center items-center md:-translate-y-7 border border-black-50 bg-black-100;
+        @apply size-14 sm:size-16 md:size-20 flex-none relative z-40 flex justify-center items-center;
     }
 
-    .timeline-logo {
-        position: relative;
-    }
     .timeline-logo img {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        max-width: 80%;
-        max-height: 80%;
-        object-fit: contain;
-        display: block;
+        @apply w-full h-full object-contain block;
     }
 
     .exp-card-wrapper {
-        @apply flex flex-col-reverse xl:flex-row xl:gap-20 gap-10 justify-between;
+        @apply grid grid-cols-1 xl:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] gap-8 xl:gap-12 items-start;
+    }
+
+    .exp-card-review {
+        @apply order-3 xl:order-1 xl:pr-4 2xl:pr-8;
+    }
+
+    .exp-card-center {
+        @apply order-1 xl:order-2 flex justify-center;
+    }
+
+    .exp-card-details {
+        @apply order-2 xl:order-3 xl:pl-4 2xl:pl-8 text-center xl:text-left;
     }
 
     .gradient-edge {

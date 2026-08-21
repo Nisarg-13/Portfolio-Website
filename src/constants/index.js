@@ -123,10 +123,10 @@ const techStackIcons = [
 
 const expCards = [
     {
-        review: "At EVER, I work as a Software Developer, developing scalable full-stack features and cross-platform mobile applications. I focus on building robust backend services, optimizing database performance, and creating intuitive user interfaces while collaborating in an Agile environment.",
+        review: "At EVER, I work as a Full Stack Developer, developing scalable full-stack features and cross-platform mobile applications. I focus on building robust backend services, optimizing database performance, and creating intuitive user interfaces while collaborating in an Agile environment.",
         imgPath: "",
         logoPath: "/images/EVER.jpg",
-        title: "Software Developer",
+        title: "Full Stack Developer",
         date: "September 2025 - Present",
         responsibilities: [
             "Built scalable full-stack features using Next.js, Node.js, React, and TypeScript, following clean architecture and best coding practices.",

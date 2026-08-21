@@ -66,7 +66,7 @@ const Loader = ({ onComplete }) => {
                     color: "#9cb8d7",
                 }}
             >
-                Software Developer
+                Full Stack Developer
             </p>
         </div>
     );

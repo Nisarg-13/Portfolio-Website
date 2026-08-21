@@ -131,7 +131,7 @@ const Hero = () => {
                         </div>
                         <div className="text-left max-w-xl w-full">
                             <p className="text-white-50 text-base md:text-xl relative z-10 pointer-events-none">
-                                Hi, I'm Nisarg, a software developer focused on turning ideas into efficient, real-world
+                                Hi, I'm Nisarg, a Full Stack Developer focused on turning ideas into efficient, real-world
                                 solutions.
                             </p>
                         </div>
