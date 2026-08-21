@@ -296,8 +296,8 @@ const IsometricRoom = () => {
     const handleObjectClick = (objectName) => {
         if (objectName === "drawer") {
             const link = document.createElement("a");
-            link.href = "/resume.pdf";
-            link.download = "Nisarg-Resume.pdf";
+            link.href = "/Nisarg_Patel_CV.pdf";
+            link.download = "Nisarg_Patel_CV.pdf";
             link.click();
             return;
         }
