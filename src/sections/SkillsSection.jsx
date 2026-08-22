@@ -6,42 +6,100 @@ import * as FaIcons from "react-icons/fa";
 import * as SiIcons from "react-icons/si";
 
 const SKILLS = [
-    { name: "React", category: "frontend", iconPack: "fa", iconKey: "FaReact" },
+    { name: "React.js", category: "frontend", iconPack: "fa", iconKey: "FaReact" },
+    { name: "Next.js", category: "frontend", iconPack: "si", iconKey: "SiNextdotjs" },
     { name: "React Native", category: "frontend", iconPack: "fa", iconKey: "FaReact" },
-    { name: "Tailwind", category: "frontend", iconPack: "si", iconKey: "SiTailwindcss" },
-    { name: "Angular", category: "frontend", iconPack: "si", iconKey: "SiAngular" },
+    { name: "TypeScript", category: "languages", iconPack: "si", iconKey: "SiTypescript" },
+    { name: "JavaScript", category: "languages", iconPack: "si", iconKey: "SiJavascript" },
+    { name: "Tailwind CSS", category: "frontend", iconPack: "si", iconKey: "SiTailwindcss" },
     { name: "HTML", category: "frontend", iconPack: "si", iconKey: "SiHtml5" },
     { name: "CSS", category: "frontend", iconPack: "si", iconKey: "SiCss3" },
-    { name: "Three.js", category: "frontend", iconPack: "si", iconKey: "SiThreedotjs" },
-    { name: "JavaScript", category: "languages", iconPack: "si", iconKey: "SiJavascript" },
-    { name: "TypeScript", category: "languages", iconPack: "si", iconKey: "SiTypescript" },
-    { name: "Java", category: "languages", iconPack: "fa", iconKey: "FaJava" },
-    { name: "C", category: "languages", badge: "C" },
-    { name: "C#", category: "languages", badge: "C#" },
-    { name: "C++", category: "languages", badge: "C++" },
-    { name: "SQL", category: "languages", iconPack: "fa", iconKey: "FaDatabase" },
     { name: "Node.js", category: "backend", iconPack: "fa", iconKey: "FaNodeJs" },
     { name: "Express.js", category: "backend", iconPack: "si", iconKey: "SiExpress" },
-    { name: ".NET Core", category: "backend", iconPack: "si", iconKey: "SiDotnet" },
     { name: "Python", category: "backend", iconPack: "fa", iconKey: "FaPython" },
+    { name: "FastAPI", category: "backend", iconPack: "si", iconKey: "SiFastapi" },
+    { name: "C#", category: "languages", iconPack: "si", iconKey: "SiCsharp" },
+    { name: ".NET Core", category: "backend", iconPack: "si", iconKey: "SiDotnet" },
+    { name: "GraphQL", category: "backend", iconPack: "si", iconKey: "SiGraphql" },
     { name: "PostgreSQL", category: "databases", iconPack: "si", iconKey: "SiPostgresql" },
+    { name: "Prisma", category: "databases", iconPack: "si", iconKey: "SiPrisma" },
     { name: "MongoDB", category: "databases", iconPack: "si", iconKey: "SiMongodb" },
-    { name: "Git", category: "tools", iconPack: "fa", iconKey: "FaGitAlt" },
-    { name: "Vite", category: "tools", iconPack: "si", iconKey: "SiVite" },
-    { name: "Figma", category: "tools", iconPack: "fa", iconKey: "FaFigma" },
-    { name: "Prisma", category: "tools", iconPack: "si", iconKey: "SiPrisma" },
-    { name: "Jira", category: "tools", iconPack: "si", iconKey: "SiJira" },
-    { name: "Azure DevOps", category: "tools", iconPack: "si", iconKey: "SiAzuredevops" },
+    { name: "Redis", category: "databases", iconPack: "si", iconKey: "SiRedis" },
     { name: "RabbitMQ", category: "tools", iconPack: "si", iconKey: "SiRabbitmq" },
-    { name: "Redis", category: "tools", iconPack: "si", iconKey: "SiRedis" },
+    { name: "AWS", category: "tools", iconPack: "fa", iconKey: "FaAws" },
     { name: "Docker", category: "tools", iconPack: "si", iconKey: "SiDocker" },
+    { name: "Git", category: "tools", iconPack: "fa", iconKey: "FaGitAlt" },
+    { name: "GitHub Actions", category: "tools", iconPack: "si", iconKey: "SiGithubactions" },
+    { name: "Vercel", category: "tools", iconPack: "si", iconKey: "SiVercel" },
+    { name: "Azure DevOps", category: "tools", iconPack: "si", iconKey: "SiAzuredevops" },
+    { name: "OpenAI", category: "tools", iconPack: "si", iconKey: "SiOpenai" },
+    { name: "Stripe", category: "tools", iconPack: "si", iconKey: "SiStripe" },
+    { name: "Socket.IO", category: "backend", iconPack: "si", iconKey: "SiSocketdotio" },
+    { name: "Jira", category: "tools", iconPack: "si", iconKey: "SiJira" },
 ];
 
 const GROUPED_SKILLS = {
-    Languages: ["JavaScript", "TypeScript", "Java", "C", "C#", "C++", "SQL", "Python"],
-    Frameworks: ["React.js", "Angular", "Node.js", "Express.js", "React Native", ".NET Core"],
-    ToolsPlatforms: ["Prisma", "Jira", "Azure DevOps", "Tailwind", "RabbitMQ", "Redis", "Git", "Docker", "Vite", "Figma", "Three.js", "HTML", "CSS"],
-    Databases: ["PostgreSQL", "MongoDB"],
+    Frontend: [
+        "React.js",
+        "Next.js",
+        "React Native",
+        "TypeScript",
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "Tailwind CSS",
+    ],
+    "Backend & APIs": [
+        "Node.js",
+        "Express.js",
+        "Python",
+        "FastAPI",
+        "C#",
+        ".NET Core",
+        "REST APIs",
+        "GraphQL",
+        "Webhooks",
+    ],
+    "Databases & Data": [
+        "PostgreSQL",
+        "SQL",
+        "Prisma ORM",
+        "SQLAlchemy",
+        "MongoDB",
+        "Redis",
+        "RabbitMQ",
+    ],
+    "Cloud & DevOps": [
+        "AWS (EC2, RDS, S3)",
+        "Docker",
+        "GitHub Actions",
+        "CI/CD",
+        "Git",
+        "Azure DevOps",
+        "Vercel",
+    ],
+    "AI & Integrations": [
+        "OpenAI",
+        "Agentic AI Workflows",
+        "Stripe",
+        "Shopify GraphQL APIs",
+        "Clerk",
+        "Vercel Blob",
+        "Socket.IO",
+    ],
+    Engineering: [
+        "Full-Stack Development",
+        "Backend Development",
+        "Mobile Development",
+        "API Design",
+        "Database Design",
+        "Event-Driven Systems",
+        "Production Deployments",
+        "Database Migrations",
+        "Agile/Scrum",
+        "Jira",
+        "Code Review",
+    ],
 };
 
 const colorByCategory = {
@@ -295,11 +353,11 @@ const SkillsSection = () => {
                     </div>
                 )}
 
-                <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="mt-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
                     {Object.entries(GROUPED_SKILLS).map(([group, values]) => (
                         <div key={group} className="rounded-xl border border-white/10 bg-[#0f1d31] p-4">
                             <p className="text-sm tracking-wider uppercase text-[#8fb4df]">
-                                {group === "ToolsPlatforms" ? "Tools & Platforms" : group}
+                                {group}
                             </p>
                             <div className="mt-3 flex flex-wrap gap-2">
                                 {values.map((skill) => (
