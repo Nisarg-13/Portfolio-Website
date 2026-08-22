@@ -143,7 +143,7 @@ const expCards = [
         imgPath: "",
         logoPath: "/images/Casepoint.jpg",
         title: "Software Developer",
-        date: "January 2024 - April 2024",
+        date: "January 2024 - June 2024",
         responsibilities: [
             "Built scalable recruitment modules using .NET Core and PostgreSQL for seamless HR and interviewer workflows.",
             "Integrated Redis, RabbitMQ, and Elasticsearch to enhance performance, messaging, and search capabilities.",
